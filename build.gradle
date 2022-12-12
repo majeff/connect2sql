@@ -1,13 +1,14 @@
 buildscript {
     ext {
-        version_androidgradle = '3.2.0'
-        version_kotlin = '1.2.61'
-        version_ktlint = '4.1.0'
-        version_detekt = '1.0.0.RC8'
+        version_androidgradle = '7.3.1'
+        version_kotlin = '1.7.22'
+        version_ktlint = '11.0.0'
+        version_detekt = '1.22.0'
     }
 
     repositories {
         google()
+        mavenCentral()
         jcenter()
         maven {
             url 'https://plugins.gradle.org/m2/'
@@ -16,13 +17,14 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:${version_androidgradle}"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${version_kotlin}"
-        classpath "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:${version_ktlint}"
-        classpath "gradle.plugin.io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${version_detekt}"
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:${version_ktlint}"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${version_detekt}"
     }
 }
 
 allprojects {
     repositories {
+        mavenCentral()
         google()
         jcenter()
     }
